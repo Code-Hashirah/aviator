@@ -1,0 +1,170 @@
+<%- include('includes/header.ejs') %>
+<body>
+  
+<div class="wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <h3>Aviator Express</h3>
+      <!-- <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60"> -->
+    </div>
+  
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="/" class="nav-link ">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="wa.me/09053109638" class="nav-link">Contact</a>
+        </li>
+      </ul>
+  
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+            <i class="fas fa-search"></i>
+          </a>
+          
+        </li>
+    </ul>
+    </nav>
+    <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    
+       <img src="travel.jpg" alt="airport" class="h-100">
+    
+   
+  </aside>
+
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3 class="animate__animated animate__bounce__delay-2s"><i class="fas fa-rocket"></i> 100%</h3>
+
+                <p>Fast and Efficient</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner ">
+                <h3>30<sup style="font-size: 20px">%</sup></h3>
+                <p class="wow bounceInUp" >Over 30 flights per week</p>
+               <i class="fa fa-plane"></i>
+               <i class="ion ion-stats-bars"></i>
+              </div>
+              <!-- <div class="icon">
+               
+              </div> -->
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+         
+          <!-- ./col -->
+          <div class="col-lg-3 col-6 animate_animated animate__bounce">
+            <!-- small box -->
+            <div class="small-box bg-primary">
+              <div class="inner">
+                <h3 class="animate__heartBeat">60</h3>
+
+                <p class="animate__heartBeat" data-wow-delay="2s">Over 60 Routes</p>
+              </div>
+             
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+           <!-- ./col -->
+           <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>0</h3>
+
+                <p class="animate__heartBeat">0% Disaster Rate</p>
+              </div>
+             
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+       <% if(trip.length >0){
+        for(let list of trip){ %>
+          <div class="col-lg-3 col-6  wow animate__heartBeat">
+            <!-- small box -->
+            <div class="small-box bg-secondary">
+              <div class="inner">
+                <h4>Trip overview</h4>
+                <!-- <i class="fas fa-rocket"></i> -->
+                <i class="fa fa-plane"></i>
+                <p>From: <%= list.location %></p>
+                <p>To: <%=list.destination %></p>
+                <p>Price: ₦<%= list.price %></p>
+              </div>
+             
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+     <%   }
+       } 
+       else{ %>
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-primary">
+            <div class="inner">
+              <h3>0</h3>
+
+              <p>Nothing to Display </p>
+            </div>
+           
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+     <%  }
+       %>
+      </div>
+              <!-- /.card-body -->
+             
+              <!-- /.card-footer-->
+            </div>
+            <!--/.direct-chat -->
+
+            <!-- TO DO List -->
+            
+    <!-- /.content -->
+  </div>
+
+    </div>
+    <%- include('includes/footer.ejs') %>
+</body>
